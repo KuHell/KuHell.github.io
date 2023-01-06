@@ -1,11 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import { useState } from "react";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -17,19 +12,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="snap-y snap-mandatory h-screen w-screen overflow-scroll">
-          <div className="snap-start bg-amber-200 w-screen h-screen flex items-center justify-center text-8xl">
-            1
-          </div>
-          <div className="snap-start bg-teal-200 w-screen h-screen flex items-center justify-center text-8xl">
-            <Link href="/about">About</Link>
-          </div>
-          <div className="snap-start bg-gray-200 w-screen h-screen flex items-center justify-center text-8xl">
-            <Link href="/blog">Blog</Link>
-          </div>
-          <div className="snap-start bg-amber-200 w-screen h-screen flex items-center justify-center text-8xl">
-            <Link href="/contact">Contact</Link>
-          </div>
+        <div className="snap-y snap-mandatory h-screen w-screen overflow-scroll scrollbar-hide">
+          <div className="snap-start bg-amber-200 w-screen h-screen flex items-center justify-center text-8xl"></div>
+          <Link href="/about">
+            <div className="snap-start bg-teal-200 w-screen h-screen flex items-center justify-center text-8xl"></div>
+          </Link>
+          <Link href="/blog">
+            <div className="snap-start bg-gray-200 w-screen h-screen flex items-center justify-center text-8xl"></div>
+          </Link>
+          <Link href="/contact">
+            <div className="snap-start bg-amber-200 w-screen h-screen flex items-center justify-center text-8xl"></div>
+          </Link>
         </div>
       </main>
     </>
