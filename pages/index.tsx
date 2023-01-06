@@ -55,7 +55,7 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll);
     }; //  window 에서 스크롤을 감시를 종료
   });
-  const animatedAbout = useScrollFadeIn(2, 0);
+  const animatedAbout = useScrollFadeIn(1, 0);
 
   return (
     <Layout>
