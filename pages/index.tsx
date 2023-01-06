@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import useScrollFadeIn from "../hooks/useScrollFadeIn";
@@ -26,13 +27,13 @@ export default function Home() {
 
   const test = () => {
     if (ScrollActive === 0) {
-      return "bg-[#000]";
+      return "bg-[#fff]";
     }
     if (ScrollActive === 1) {
-      return "bg-[#000]";
+      return "bg-[#fff]";
     }
     if (ScrollActive === 2) {
-      return "bg-[#fff]";
+      return "bg-[#000]";
     }
     if (ScrollActive === 3) {
       return "bg-[#3255ed]";
@@ -57,11 +58,12 @@ export default function Home() {
   const animatedAbout = useScrollFadeIn(1, 0);
 
   return (
-    <div className="scrollbar-hide">
-      <Layout>
-        <div className="bg-fixed w-screen h-screen bg-[url('../public/mainBg.png')] bg-cover ">
+    <Layout>
+      <div className="scrollbar-hide">
+        <div className={`flex w-screen h-screen ${test()} duration-700`}>
           <p
-            className={`text-white flex items-center justify-center text-8xl h-screen w-screen`}
+            {...animatedAbout}
+            className={`font-['Soak-Up-The-Sun'] text-[#3255ed] flex items-center justify-center text-[400px] h-screen w-screen`}
           >
             KuHell
           </p>
@@ -73,32 +75,15 @@ export default function Home() {
             <p
               className={`${
                 ScrollActive === 1 || ScrollActive === 0
-                  ? "text-white"
-                  : "text-black"
+                  ? "text-black"
+                  : "text-white"
               } `}
             >
               PROJECT
             </p>
           </Link>
         </div>
-        <div
-          className={`flex items-center justify-center text-8xl h-screen w-screen ${test()} duration-700 `}
-        >
-          <Link {...animatedAbout} href="/about">
-            About
-          </Link>
-        </div>
-        <div
-          className={`flex items-center justify-center text-8xl h-screen w-screen ${test()} duration-700`}
-        >
-          <Link href="/blog">Blog</Link>
-        </div>
-        <div
-          className={`flex items-center justify-center text-8xl h-screen w-screen ${test()} duration-700`}
-        >
-          <Link href="/contact">Contact</Link>
-        </div>
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   );
 }
