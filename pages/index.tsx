@@ -55,7 +55,7 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll);
     }; //  window 에서 스크롤을 감시를 종료
   });
-  const animatedAbout = useScrollFadeIn(1, 0);
+  const animatedAbout = useScrollFadeIn(2, 0);
 
   return (
     <Layout>
@@ -71,7 +71,7 @@ export default function Home() {
         <div
           className={`flex items-center justify-center text-8xl h-screen w-screen ${test()} duration-700`}
         >
-          <Link href="/about">
+          <Link href="/project">
             <p
               className={`${
                 ScrollActive === 1 || ScrollActive === 0
