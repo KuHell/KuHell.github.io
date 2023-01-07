@@ -75,8 +75,8 @@ export default function Home() {
             <p
               className={`${
                 ScrollActive === 1 || ScrollActive === 0
-                  ? "text-black"
-                  : "text-white"
+                  ? "text-white"
+                  : "text-black"
               } `}
             >
               PROJECT
