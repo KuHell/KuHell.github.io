@@ -5,6 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
+      {/* <body className="scrollbar-hide"> */}
       <body className="scrollbar-hide">
         <Main />
         <NextScript />
