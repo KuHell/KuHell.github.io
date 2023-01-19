@@ -77,7 +77,6 @@ export default function Home() {
                 ScrollActive === 1 || ScrollActive === 0
                   ? "text-black"
                   : "text-white"
-                  : "text-white"
               } `}
             >
               PROJECT
